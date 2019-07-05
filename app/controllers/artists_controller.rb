@@ -5,7 +5,6 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    binding.pry
     @artist = Artist.create(params.require(:artist).permit(:name, :bio))
     redirect_to artist_path(@artist)
   end
@@ -16,7 +15,6 @@ class ArtistsController < ApplicationController
 
   def update
     @artist = Artist.find(params[:id])
-    binding.pry
     @artist.update(params.require(:artist).permit(:name, :bio))
     redirect_to artist_path(@artist)
   end
