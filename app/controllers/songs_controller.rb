@@ -20,5 +20,6 @@ class SongsController < ApplicationController
 
   def show
     @genre = Genre.find(params[:id])
+    @artist = Artist.find(params[:id])
   end
 end
